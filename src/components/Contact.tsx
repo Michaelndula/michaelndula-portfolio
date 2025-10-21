@@ -7,6 +7,7 @@ export function Contact() {
       </p>
       <form
         name="contact"
+        netlify
         method="POST"
         data-netlify="true"
         className="contact-form"
