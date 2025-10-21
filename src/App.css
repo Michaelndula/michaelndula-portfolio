@@ -387,7 +387,7 @@ body {
 }
 
 .skill-card {
-    position: relative; 
+    position: relative;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 0.75rem;
@@ -466,7 +466,12 @@ body {
 
 @media (max-width: 900px) {
     .skills-showcase {
-        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 0;
     }
 }
 
@@ -590,6 +595,7 @@ body {
 
 .contact-section {
   text-align: center;
+  padding: 2.5rem;
 }
 
 .contact-section .hero-summary {
