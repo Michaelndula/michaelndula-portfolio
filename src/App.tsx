@@ -7,6 +7,8 @@ import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Skills } from './components/Skills';
+import { Philosophy } from './components/Philosophy';
+import { Terminal } from './components/Terminal';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -49,8 +51,10 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <Terminal />
         <Skills />
         <Projects />
+        <Philosophy />
         <Contact />
       </main>
       <Footer />

@@ -327,6 +327,92 @@ body {
     }
 }
 
+.terminal-window {
+    background-color: #0d1117; /* GitHub dark theme color */
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    font-family: var(--font-mono);
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background-color: #161b22;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.terminal-body {
+    padding: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.terminal-body pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.terminal-prompt {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-prompt span {
+    color: #3fb950;
+    margin-right: 0.5rem;
+    font-weight: 700;
+}
+
+.terminal-input {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.terminal-input:focus {
+    outline: none;
+}
+
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
 #skills {
     overflow: hidden;
 }
@@ -807,5 +893,63 @@ body {
     color: #ef4444;
     text-align: right;
     font-size: 0.9rem;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.philosophy-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.philosophy-card-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.philosophy-card:hover .philosophy-card-icon {
+    background-color: var(--accent);
+    color: white;
+}
+
+.philosophy-card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.philosophy-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.philosophy-card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
