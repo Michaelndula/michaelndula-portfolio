@@ -5,10 +5,11 @@ export function Contact() {
       <p className="hero-summary">
         Have a question, a project proposal, or just want to connect? I'd love to hear from you.
       </p>
+
       <form
         name="contact"
-        netlify
         method="POST"
+        action="/success"
         data-netlify="true"
         className="contact-form"
       >
