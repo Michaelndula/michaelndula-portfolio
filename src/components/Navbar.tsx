@@ -11,11 +11,8 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
           /michael-ndula
         </a>
         <div className="navbar-links">
-          <a href="#projects" className="navbar-link">
-            Projects
-          </a>
-          <a href="#contact" className="navbar-link">
-            Contact
+          <a href="#contact" className="btn-cta">
+            Let's Connect
           </a>
           <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Toggle theme">
             {theme === 'light' ? '🌙' : '☀️'}
