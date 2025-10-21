@@ -64,7 +64,6 @@ body {
   transform: translateY(0);
 }
 
-
 .navbar {
   position: sticky;
   top: 0;
@@ -121,10 +120,11 @@ body {
   transform: rotate(15deg) scale(1.1);
 }
 
+
 .hero {
   position: relative;
   isolation: isolate;
-  overflow: hidden;  
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,8 +166,8 @@ body {
 .hero-summary {
   font-size: 1.125rem;
   color: var(--text-secondary);
+  max-width: 600px;
   margin: 1.5rem 0 0 0;
-  text-align: center;
 }
 
 .hero-cta {
@@ -233,15 +233,16 @@ body {
         transform: translate(0%, -100%);
     }
     50% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 0%); 
     }
     75% {
-        transform: translate(-100%, 0%);
+        transform: translate(-100%, 0%); 
     }
     100% {
-        transform: translate(-100%, -100%);
+        transform: translate(-100%, -100%); 
     }
 }
+
 
 #projects::before {
   content: '';
@@ -357,6 +358,91 @@ body {
 .contact-section {
   text-align: center;
 }
+
+.contact-section .hero-summary {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-submit {
+    text-align: right;
+}
+
+.btn-submit {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -5px rgba(79, 70, 229, 0.4);
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
 
 .footer {
   text-align: center;
