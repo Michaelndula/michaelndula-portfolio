@@ -7,7 +7,7 @@ export function Footer() {
                     &bull;
                     <a href="mailto:michaelndula@gmail.com">Email</a>
                 </p>
-                <p>&copy; {new Date().getFullYear()} Michael Ndula. Built with React & lots of coffee.</p>
+                <p>&copy; {new Date().getFullYear()} Michael Ndula. Built with lots of coffee.</p>
             </div>
         </footer>
     );
