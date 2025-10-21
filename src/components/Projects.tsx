@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 
-// Add a 'tags' array to each project for filtering
 const projectData = [
   {
     title: 'LexKen AI - Legal AI Platform',
@@ -31,9 +30,30 @@ const projectData = [
     tech: ['React Native', 'Java', 'Spring', 'M-Pesa API'],
     tags: ['java', 'mobile'],
   },
+  {
+    title: 'Rentals Management System',
+    role: 'Full-Stack Developer',
+    description: 'Built a full-stack property management system to streamline listings, tenant communications, and rent tracking for landlords.',
+    tech: ['Python', 'Django', 'React', 'MySQL'],
+    tags: ['python', 'react'],
+  },
+  {
+    title: 'Botswana EMR Reporting Module',
+    role: 'Backend Engineer',
+    description: 'Architected and delivered advanced, indicator-based reporting modules to enable data-driven public health decisions by the MOH.',
+    tech: ['Java', 'Spring', 'MySQL', 'Hibernate', 'REST APIs'],
+    tags: ['java'],
+  },
+  {
+    title: 'Pharmacovigilance App (PvERS)',
+    role: 'Mobile Developer',
+    description: 'Revamped the PvERS mobile app, ensuring compatibility with the latest Android & iOS versions to improve drug safety reporting.',
+    tech: ['React Native', 'Android', 'iOS', 'TypeScript'],
+    tags: ['mobile', 'react-native'],
+  },
 ];
 
-const filters = ['All', 'AI', 'Java', 'React', 'Python'];
+const filters = ['All', 'AI', 'Java', 'Python', 'React', 'React Native', 'Mobile'];
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -64,3 +84,4 @@ export function Projects() {
     </section>
   );
 }
+
