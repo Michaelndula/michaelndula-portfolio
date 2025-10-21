@@ -107,47 +107,45 @@ export function Projects() {
     ? projectData
     : projectData.filter(p => p.tags.includes(activeFilter.toLowerCase()));
 
-  // Effect to prevent background scrolling when the modal is open
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-    // Cleanup function to reset the style when the component unmounts
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [selectedProject]);
 
   return (
-    // Use a React Fragment to return multiple top-level elements
     <>
-      <section id="projects" className="section container fade-in-section">
-        <h2 className="projects-title">Projects</h2>
-        <div className="project-filters">
-          {filters.map(filter => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-        <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              onClick={() => setSelectedProject(project)}
-            />
-          ))}
+      <section id="projects" className="section fade-in-section">
+        <div className="container">
+          <h2 className="projects-title">Projects</h2>
+          <div className="project-filters">
+            {filters.map(filter => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+          <div className="projects-grid">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Conditionally render the modal outside the main section */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
