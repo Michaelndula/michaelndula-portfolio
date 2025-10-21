@@ -1,20 +1,20 @@
+import { type Project } from './ProjectModal';
+
 interface CardProps {
-  title: string;
-  role: string;
-  description: string;
-  tech: string[];
+  project: Project;
+  onClick: () => void;
 }
 
-export function ProjectCard({ title, role, description, tech }: CardProps) {
+export function ProjectCard({ project, onClick }: CardProps) {
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={onClick}>
       <div>
-        <h3 className="card-role">{role}</h3>
-        <h2 className="card-title">{title}</h2>
-        <p className="card-description">{description}</p>
+        <h3 className="card-role">{project.role}</h3>
+        <h2 className="card-title">{project.title}</h2>
+        <p className="card-description">{project.description}</p>
       </div>
       <div className="card-tech">
-        {tech.map((tag) => (
+        {project.tech.map((tag) => (
           <span key={tag} className="tech-tag">
             {tag}
           </span>
@@ -23,3 +23,4 @@ export function ProjectCard({ title, role, description, tech }: CardProps) {
     </div>
   );
 }
+

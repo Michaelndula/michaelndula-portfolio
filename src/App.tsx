@@ -10,13 +10,11 @@ import { Footer } from './components/Footer';
 function App() {
   const [theme, setTheme] = useState('dark');
 
-  // Effect to set initial theme based on system preference
   useEffect(() => {
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     setTheme(prefersDark ? 'dark' : 'light');
   }, []);
 
-  // Effect to apply theme to body
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
@@ -25,7 +23,6 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  // Effect for fade-in animations on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,7 +33,7 @@ function App() {
         });
       },
       {
-        threshold: 0.1, // Trigger when 10% of the element is visible
+        threshold: 0.1,
       }
     );
 
