@@ -5,29 +5,29 @@
 }
 
 [data-theme='light'] {
-  --bg-primary: #f0f2f5;
-  --bg-secondary: #ffffff;
-  --text-primary: #1c1c1e;
-  --text-secondary: #066b79;
-  --accent: #0c7760;
-  --accent-light: #e0e7ff;
-  --border-color: #e5e7eb;
-  --dot-color: #d1d5db; 
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --bg-primary: #F5EFE6; 
+  --bg-secondary-glass: rgba(255, 255, 255, 0.3);
+  --text-primary: #4a2c2a;
+  --text-secondary: #785a54;
+  --accent: #E57A44;
+  --accent-light: #FFEFE5;
+  --border-color-glass: rgba(255, 255, 255, 0.6);
+  --dot-color: #d1c7bc;
+  --shadow: 0 8px 16px -4px rgba(74, 44, 42, 0.1), 0 4px 8px -2px rgba(74, 44, 42, 0.08); 
+  --shadow-lg: 0 16px 24px -6px rgba(74, 44, 42, 0.12), 0 8px 12px -4px rgba(74, 44, 42, 0.1);
 }
 
 [data-theme='dark'] {
-  --bg-primary: #121212;
-  --bg-secondary: #1e1e1e;
-  --text-primary: #f3f4f6;
-  --text-secondary: #f0f8f8;
-  --accent: #0a737a;
-  --accent-light: #11e9e9;
-  --border-color: #374151;
-  --dot-color: var(--border-color);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+  --bg-primary: #111010; 
+  --bg-secondary-glass: rgba(43, 31, 28, 0.3); 
+  --text-primary: #EAE0D5; 
+  --text-secondary: #b0a091;
+  --accent: #E57A44;
+  --accent-light: #4a2c2a;
+  --border-color-glass: rgba(74, 44, 42, 0.6);
+  --dot-color: #4a2c2a;
+  --shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3), 0 4px 8px -2px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 16px 24px -6px rgba(0, 0, 0, 0.35), 0 8px 12px -4px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -36,6 +36,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 0% 0%, hsla(18, 26%, 80%, 0.1), transparent 50%), radial-gradient(circle at 100% 100%, hsla(20, 74%, 58%, 0.1), transparent 50%);
   color: var(--text-primary);
   transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
 }
@@ -50,7 +51,7 @@ body {
   position: relative;
   isolation: isolate;
   padding: 6rem 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color-glass);
 }
 
 .fade-in-section {
@@ -64,13 +65,14 @@ body {
   transform: translateY(0);
 }
 
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary-glass);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--border-color-glass);
   transition: background-color 0.3s ease;
 }
 
@@ -112,42 +114,6 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.navbar-link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.navbar-link:hover {
-  color: var(--text-primary);
-}
-
-.btn-github {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: #24292e;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-github:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
-.btn-github svg {
-    width: 20px;
-    height: 20px;
-}
-
 .theme-toggle-btn {
   background: none;
   border: none;
@@ -170,6 +136,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: calc(70vh - 4.5rem);
+  border-bottom: 1px solid var(--border-color-glass);
 }
 
 .hero .container {
@@ -233,7 +200,7 @@ body {
 
 .cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 20px -5px rgba(3, 215, 243, 0.4);
+  box-shadow: 0 12px 20px -5px rgba(229, 122, 68, 0.4);
 }
 
 .hero-socials {
@@ -251,7 +218,9 @@ body {
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-color-glass);
+    background-color: var(--bg-secondary-glass);
+    backdrop-filter: blur(5px);
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -266,13 +235,11 @@ body {
 }
 
 .social-github {
-    background-color: #24292e;
-    border-color: #444c56;
+    background-color: rgba(36, 41, 46, 0.4);
 }
 
 .social-linkedin {
-    background-color: #0A66C2;
-    border-color: #004182;
+    background-color: rgba(10, 102, 194, 0.4);
 }
 
 .hero::before {
@@ -317,19 +284,21 @@ body {
         transform: translate(0%, -100%);
     }
     50% {
-        transform: translate(0%, 0%); 
+        transform: translate(0%, 0%);
     }
     75% {
-        transform: translate(-100%, 0%); 
+        transform: translate(-100%, 0%);
     }
     100% {
-        transform: translate(-100%, -100%); 
+        transform: translate(-100%, -100%);
     }
 }
 
+
 .terminal-window {
-    background-color: #0d1117; /* GitHub dark theme color */
-    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary-glass);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color-glass);
     border-radius: 0.75rem;
     box-shadow: var(--shadow-lg);
     font-family: var(--font-mono);
@@ -340,13 +309,13 @@ body {
 }
 
 .terminal-header {
-    background-color: #161b22;
+    background-color: rgba(22, 27, 34, 0.4);
     padding: 0.75rem;
     display: flex;
     align-items: center;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color-glass);
 }
 
 .terminal-dots {
@@ -413,6 +382,7 @@ body {
     z-index: 10;
 }
 
+
 #skills {
     overflow: hidden;
 }
@@ -465,7 +435,6 @@ body {
     color: var(--accent);
 }
 
-
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -474,8 +443,9 @@ body {
 
 .skill-card {
     position: relative;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary-glass);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--border-color-glass);
     border-radius: 0.75rem;
     padding: 1.75rem;
     overflow: hidden;
@@ -542,7 +512,7 @@ body {
 
 .skill-item {
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color-glass);
     color: var(--text-secondary);
     font-family: var(--font-mono);
     font-size: 0.8rem;
@@ -567,6 +537,64 @@ body {
     }
 }
 
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.philosophy-card {
+    background: var(--bg-secondary-glass);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color-glass);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.philosophy-card-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.philosophy-card:hover .philosophy-card-icon {
+    background-color: var(--accent);
+    color: white;
+}
+
+.philosophy-card-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.philosophy-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.philosophy-card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
 
 #projects::before {
   content: '';
@@ -598,8 +626,9 @@ body {
 }
 
 .filter-btn {
-  background: none;
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary-glass);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border-color-glass);
   color: var(--text-secondary);
   padding: 0.5rem 1rem;
   border-radius: 99px;
@@ -624,8 +653,9 @@ body {
 
 
 .project-card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary-glass);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--border-color-glass);
   border-radius: 0.75rem;
   padding: 1.75rem;
   box-shadow: var(--shadow);
@@ -670,6 +700,7 @@ body {
 
 .tech-tag {
   background-color: var(--accent-light);
+  border: 1px solid var(--border-color-glass);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -681,7 +712,6 @@ body {
 
 .contact-section {
   text-align: center;
-  padding: 2.5rem;
 }
 
 .contact-section .hero-summary {
@@ -695,6 +725,11 @@ body {
     max-width: 700px;
     margin: 0 auto;
     text-align: left;
+    background-color: var(--bg-secondary-glass);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color-glass);
+    padding: 2rem;
+    border-radius: 0.75rem;
 }
 
 .form-row {
@@ -721,9 +756,9 @@ body {
     padding: 0.8rem 1rem;
     font-size: 1rem;
     font-family: var(--font-sans);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color-glass);
     border-radius: 0.5rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -758,7 +793,7 @@ body {
 
 .btn-submit:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 20px -5px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 12px 20px -5px rgba(229, 122, 68, 0.4);
 }
 
 @media (max-width: 600px) {
@@ -774,6 +809,7 @@ body {
   padding: 2.5rem 0;
   color: var(--text-secondary);
   font-size: 0.9rem;
+  border-top: 1px solid var(--border-color-glass);
 }
 
 .footer a {
@@ -808,7 +844,8 @@ body {
 }
 
 .modal-content {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-secondary-glass);
+  backdrop-filter: blur(5px);
   color: var(--text-primary);
   padding: 2.5rem;
   border-radius: 0.75rem;
@@ -819,6 +856,7 @@ body {
   position: relative;
   transform: translateY(-20px);
   animation: slideIn 0.4s var(--ease-out) forwards;
+  border: 1px solid var(--border-color-glass);
 }
 
 @keyframes slideIn {
@@ -876,7 +914,8 @@ body {
     max-width: 700px;
     margin: 3rem auto 0;
     padding: 2rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary-glass);
+    backdrop-filter: blur(5px);
     border: 1px solid var(--accent);
     border-radius: 0.5rem;
     text-align: center;
@@ -893,63 +932,5 @@ body {
     color: #ef4444;
     text-align: right;
     font-size: 0.9rem;
-}
-
-.philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-    padding: 2rem;
-}
-
-.philosophy-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
-}
-
-.philosophy-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-}
-
-.philosophy-card-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: var(--bg-primary);
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.philosophy-card:hover .philosophy-card-icon {
-    background-color: var(--accent);
-    color: white;
-}
-
-.philosophy-card-icon svg {
-    width: 32px;
-    height: 32px;
-}
-
-.philosophy-card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-
-.philosophy-card-description {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
 }
 
