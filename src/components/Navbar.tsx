@@ -1,22 +1,27 @@
-export function Navbar() {
+interface NavbarProps {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+export function Navbar({ theme, toggleTheme }: NavbarProps) {
   return (
-    <nav className="navbar">
-      <div className="navbar__container container">
-        <a href="#" className="navbar__logo">
-          Michael Ndula
+    <header className="navbar">
+      <div className="container navbar-container">
+        <a href="#" className="navbar-logo">
+          /michael-ndula
         </a>
-        <div className="navbar__links">
-          <a href="#about" className="navbar__link">
-            About
-          </a>
-          <a href="#projects" className="navbar__link">
+        <div className="navbar-links">
+          <a href="#projects" className="navbar-link">
             Projects
           </a>
-          <a href="#contact" className="navbar__link btn btn-primary">
+          <a href="#contact" className="navbar-link">
             Contact
           </a>
+          <button onClick={toggleTheme} className="theme-toggle-btn" aria-label="Toggle theme">
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
