@@ -37,18 +37,21 @@ export function Hero() {
   }, [charIndex, isDeleting, roleIndex, text]);
 
   return (
-    <section id="hero" className="hero container">
-      <h1 className="hero-name">Michael Ndula</h1>
-      <h2 className="hero-subtitle">
-        {text}
-        <span className="typing-cursor"></span>
-      </h2>
-      <p className="hero-summary">
-        I architect and build intelligent, scalable software solutions, specializing in Agentic AI, backend systems, and modern full-stack development.
-      </p>
-      <div className="hero-cta">
-        <a href="#projects">Explore My Work</a>
+    <section id="hero" className="hero">
+      <div className="container">
+        <h1 className="hero-name">Michael Ndula</h1>
+        <h2 className="hero-subtitle">
+          {text}
+          <span className="typing-cursor"></span>
+        </h2>
+        <p className="hero-summary">
+          I architect and build intelligent, scalable software solutions, specializing in Agentic AI, backend systems, and modern full-stack development.
+        </p>
+        <div className="hero-cta">
+          <a href="#projects">Explore My Work</a>
+        </div>
       </div>
     </section>
   );
 }
+

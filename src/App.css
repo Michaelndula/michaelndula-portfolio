@@ -123,7 +123,6 @@ body {
 }
 
 
-/* --- 4. Hero Section --- */
 .hero {
   position: relative; /* For positioning pseudo-elements */
   isolation: isolate; /* Creates a new stacking context */
@@ -132,6 +131,9 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 4.5rem); /* Full viewport minus navbar */
+}
+
+.hero .container {
   text-align: center;
 }
 
@@ -166,8 +168,8 @@ body {
 .hero-summary {
   font-size: 1.125rem;
   color: var(--text-secondary);
-  max-width: 700px;
-  margin: 1.5rem auto 0;
+  max-width: 600px; /* Adjusted max-width */
+  margin: 1.5rem 0 0 0; /* <<< CHANGE: Removed auto margins */
 }
 
 .hero-cta {
@@ -208,37 +210,37 @@ body {
 .hero::after {
   content: '';
   position: absolute;
-  width: 150vw;
-  height: 150vh;
+  width: 200vw; /* Make it much larger */
+  height: 200vh; /* Make it much larger */
   top: 50%;
   left: 50%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
+  background: radial-gradient(circle, var(--accent) 0%, transparent 50%); /* Softer falloff */
   transform-origin: center center;
-  filter: blur(250px);
+  filter: blur(300px); /* Much more blurred */
   opacity: 0.15;
   z-index: -1;
-  animation: background-glow 40s infinite alternate ease-in-out;
+  animation: background-glow 50s infinite alternate ease-in-out; /* Slower animation */
 }
 
 [data-theme='dark'] .hero::after {
-    opacity: 0.25;
+    opacity: 0.2;
 }
 
 @keyframes background-glow {
     0% {
-        transform: translate(-100%, -80%);
+        transform: translate(-100%, -100%); /* Start far top-left */
     }
     25% {
-        transform: translate(0%, -100%);
+        transform: translate(0%, -100%); /* Move to far top-right */
     }
     50% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 0%); /* Move to far bottom-right */
     }
     75% {
-        transform: translate(-100%, 0%);
+        transform: translate(-100%, 0%); /* Move to far bottom-left */
     }
     100% {
-        transform: translate(-100%, -80%);
+        transform: translate(-100%, -100%); /* Return to start */
     }
 }
 
